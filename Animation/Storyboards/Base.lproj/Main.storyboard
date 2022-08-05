@@ -101,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="animationView" destination="IqI-aQ-Iku" id="5UJ-BD-bot"/>
+                        <outlet property="startAnimationButton" destination="E8D-qT-PW6" id="Zcw-PL-1jv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

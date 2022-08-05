@@ -11,6 +11,9 @@ import SpringAnimation
 class ViewController: UIViewController {
 
     @IBOutlet var animationView: SpringView!
+    @IBOutlet var startAnimationButton: SpringButton!
+    
+    var animation = Animation.getAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startAnimation(_ sender: SpringButton) {
-        animationView.animation = "wobble"
-        animationView.curve = "easeInOutSine"
-        animationView.force = 2
-        animationView.duration = 1
-        animationView.delay = 1
-        animationView.animate()
-        
-        sender.animation = "swing"
-        sender.animate()
+        startAnimationButton.setTitle("Run " + Animation.getAnimation(), for: .normal)
     }
     
 }
