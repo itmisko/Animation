@@ -9,9 +9,15 @@ import UIKit
 import SpringAnimation
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var animationView: SpringView!
     @IBOutlet var startAnimationButton: SpringButton!
+    
+    @IBOutlet var presetAttributes: UILabel!
+    @IBOutlet var curveAttributes: UILabel!
+    @IBOutlet var forceAttributes: UILabel!
+    @IBOutlet var durationAttributes: UILabel!
+    @IBOutlet var delayAttributes: UILabel!
     
     var animation = Animation.getAnimation()
     
@@ -22,6 +28,9 @@ class ViewController: UIViewController {
 
     @IBAction func startAnimation(_ sender: SpringButton) {
         startAnimationButton.setTitle("Run " + Animation.getAnimation(), for: .normal)
+        
+        presetAttributes.text = Animation.getAnimation()
+        
     }
     
 }
