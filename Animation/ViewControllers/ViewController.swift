@@ -19,18 +19,34 @@ class ViewController: UIViewController {
     @IBOutlet var durationAttributes: UILabel!
     @IBOutlet var delayAttributes: UILabel!
     
-    var animation = Animation.getAnimation()
+    var animation = Animation.getAnimationAttributes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        presetAttributes.text = "\(animation.animation)"
+        curveAttributes.text = "\(animation.curve)"
+        forceAttributes.text = "\(String(format: "%.2f", animation.force))"
+        durationAttributes.text = "\(String(format: "%.2f", animation.duration))"
+        delayAttributes.text = "\(String(format: "%.2f", animation.delay))"
     }
 
     @IBAction func startAnimation(_ sender: SpringButton) {
-        startAnimationButton.setTitle("Run " + Animation.getAnimation(), for: .normal)
         
-        presetAttributes.text = Animation.getAnimation()
+        presetAttributes.text = "\(animation.animation)"
+        curveAttributes.text = "\(animation.curve)"
+        forceAttributes.text = "\(String(format: "%.2f", animation.force))"
+        durationAttributes.text = "\(String(format: "%.2f", animation.duration))"
+        delayAttributes.text = "\(String(format: "%.2f", animation.delay))"
         
+        animationView.animation = animation.animation
+        animationView.curve = animation.curve
+        animationView.force = CGFloat(animation.force)
+        animationView.duration = CGFloat(animation.duration)
+        animationView.delay = CGFloat(animation.delay)
+        animationView.animate()
+        
+        animation = Animation.getAnimationAttributes()
+        startAnimationButton.setTitle("Run " + animation.animation, for: .normal)
     }
     
 }

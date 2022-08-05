@@ -16,7 +16,7 @@ struct Animation {
 }
 
 extension Animation {
-    static private func getAnimationAttributes() {
+    static func getAnimationAttributes() -> Animation {
         Animation(animation: getAnimation(),
                   curve: getCurve(),
                   force: Float.random(in: 0...1.5),
