@@ -15,6 +15,8 @@ struct Animation {
     let delay: Float
 }
 
+// MARK: Extension
+
 extension Animation {
     static func getAnimationAttributes() -> Animation {
         Animation(animation: getAnimation(),

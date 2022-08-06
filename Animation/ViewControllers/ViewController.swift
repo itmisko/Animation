@@ -10,8 +10,12 @@ import SpringAnimation
 
 class ViewController: UIViewController {
     
+    // MARK: IBOutlet View & Button
+    
     @IBOutlet var animationView: SpringView!
     @IBOutlet var startAnimationButton: SpringButton!
+    
+    // MARK: IBOutlet Animation Attributes
     
     @IBOutlet var presetAttributes: UILabel!
     @IBOutlet var curveAttributes: UILabel!
@@ -19,7 +23,11 @@ class ViewController: UIViewController {
     @IBOutlet var durationAttributes: UILabel!
     @IBOutlet var delayAttributes: UILabel!
     
+    // MARK: Model call
+    
     var animation = Animation.getAnimationAttributes()
+    
+    // MARK: viewDidload
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +38,8 @@ class ViewController: UIViewController {
         delayAttributes.text = "\(String(format: "%.2f", animation.delay))"
     }
 
+    // MARK: IBAction
+    
     @IBAction func startAnimation(_ sender: SpringButton) {
         
         presetAttributes.text = "\(animation.animation)"
